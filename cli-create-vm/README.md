@@ -1,5 +1,7 @@
 # Create Linux VM
 
+Exported templates from [creating a VM with Azure CLI](https://docs.microsoft.com/en-gb/azure/virtual-machines/linux/quick-create-cli).
+
 ### Deployment
 
 Create the resource group:
