@@ -1,0 +1,2 @@
+location = "westus"
+prefix = "tf"

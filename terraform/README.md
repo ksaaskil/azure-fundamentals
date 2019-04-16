@@ -9,13 +9,14 @@ $ terraform init
 ### Plan deployment
 
 ```bash
-$ terraform plan
+$ terraform plan -var-file="secret.tfvars"
 ```
+See `secret.tfvars.example` for an example how to populate `secret.tfvars`.
 
 ### Apply deployment
 
 ```bash
-$ terraform apply
+$ terraform apply -var-file="secret.tfvars"
 ```
 
 ### Destroy
