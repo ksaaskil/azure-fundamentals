@@ -21,3 +21,11 @@ Deploy with `parameters.json` (not included):
 ```bash
 $ az deployment create -g myResourceGroup --template-file resource-group-template.json --parameter-file
 ```
+
+### Other useful commands
+
+List all resource group names and their states:
+
+```bash
+$ az group list --query="[].[name, properties.provisioningState]"
+```

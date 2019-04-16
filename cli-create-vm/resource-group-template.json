@@ -442,9 +442,7 @@
         "provisioningState": "Succeeded",
         "resourceGuid": "5d7f637c-78a1-4f8e-85c5-ba503e53ac84",
         "addressSpace": {
-          "addressPrefixes": [
-            "192.168.0.0/16"
-          ]
+          "addressPrefixes": ["192.168.0.0/16"]
         },
         "dhcpOptions": {
           "dnsServers": []

@@ -11,6 +11,7 @@ $ terraform init
 ```bash
 $ terraform plan -var-file="secret.tfvars"
 ```
+
 See `secret.tfvars.example` for an example how to populate `secret.tfvars`.
 
 ### Apply deployment
