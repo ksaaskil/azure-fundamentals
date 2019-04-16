@@ -32,7 +32,7 @@ resource "azurerm_public_ip" "publicip" {
     name                         = "${var.prefix}TFPublicIP"
     location                     = "${var.location}"
     resource_group_name          = "${azurerm_resource_group.rg.name}"
-    public_ip_address_allocation = "dynamic"
+    allocation_method            = "Dynamic"
     tags                         = "${var.tags}"
 }
 
@@ -67,7 +67,7 @@ resource "azurerm_network_interface" "nic" {
     ip_configuration {
         name                          = "${var.prefix}NICConfg"
         subnet_id                     = "${azurerm_subnet.subnet.id}"
-        private_ip_address_allocation = "dynamic"
+        private_ip_address_allocation = "Dynamic"
         public_ip_address_id          = "${azurerm_public_ip.publicip.id}"
     }
 }
@@ -107,10 +107,15 @@ resource "azurerm_virtual_machine" "vm" {
 
 }
 
-output "ip" {
-    value = "${azurerm_public_ip.publicip.ip_address}"
-}
-
 output "os_sku" {
     value = "${lookup(var.sku, var.location)}"
+}
+
+data "azurerm_public_ip" "publicip" {
+  name                = "${azurerm_public_ip.publicip.name}"
+  resource_group_name = "${azurerm_resource_group.rg.name}"
+}
+
+output "public_ip_address" {
+  value = "${data.azurerm_public_ip.publicip.ip_address}"
 }

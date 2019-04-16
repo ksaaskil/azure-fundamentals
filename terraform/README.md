@@ -24,3 +24,13 @@ $ terraform apply -var-file="secret.tfvars"
 ```bash
 $ terraform destroy
 ```
+
+### Viewing outputs
+
+After `terraform apply`, run
+
+```bash
+$ terraform output [ip]
+```
+
+to view outputs.
