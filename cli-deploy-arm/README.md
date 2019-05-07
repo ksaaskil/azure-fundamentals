@@ -22,7 +22,7 @@ $ az group create -g $RG_GROUP
 Validate the [quick start template](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-simple-linux):
 
 ```bash
-az group deployment validate \
+$ az group deployment validate \
   --resource-group $RG_GROUP \
   --template-uri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-linux/azuredeploy.json" \
   --parameters adminUsername=$USERNAME \
@@ -42,4 +42,12 @@ $ az group deployment create \
   --parameters authenticationType=password \
   --parameters adminPasswordOrKey=$PASSWORD \
   --parameters dnsLabelPrefix=$DNS_LABEL_PREFIX
+```
+
+Show deployment status:
+
+```bash
+$ az group deployment show \
+  --name MyDeployment \
+  --resource-group $RG_GROUP
 ```
